@@ -1,0 +1,29 @@
+﻿@model IEnumerable<Weather.Models.Temp>
+@{
+    ViewBag.Title = "GetWeather";
+}
+
+
+<h2>Eindhoven Weather</h2>
+<table class="table">
+    <tr>
+        <th>
+            Time 
+        </th>
+        <th>
+            In Celcius
+        </th>
+    </tr>
+    @foreach (var weather in Model.Reverse().Take(10))
+    {
+        <tr>
+            <td>
+                @weather.Time
+            </td>
+            <td>
+                @weather.Temperature C
+            </td>
+        </tr>
+    }
+    <tr></tr>
+</table>
